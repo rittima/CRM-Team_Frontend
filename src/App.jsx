@@ -6,11 +6,11 @@ import Sidebar from './components/Sidebar';
 import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
-import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import Projects from './pages/Projects';
 import Documents from './pages/Documents';
 import Report from './pages/Report';
+import Manager from './pages/Manager';
 
 function App() {
   return (
@@ -32,9 +32,8 @@ function App() {
               <Route path="/documents" element={<ProtectedRoute><Documents /></ProtectedRoute>} />
               <Route path="/reports" element={<ProtectedRoute><Report /></ProtectedRoute>} />
               <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
+              <Route path="/manager" element={<Manager />} />
               <Route path="*" element={<NotFound />} />
-              {/* <Route path='/attendance' element={<Attendance />} /> */}
             </Routes>
           </main>
         </div>

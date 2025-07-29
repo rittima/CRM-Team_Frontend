@@ -51,6 +51,11 @@ const Sidebar = () => {
                 Reports
               </NavLink>
             </li>
+            <li>
+              <NavLink to="/manager" className="nav-link">
+                Manager
+              </NavLink>
+            </li>
           </ul>
         </aside>
       ) : (
