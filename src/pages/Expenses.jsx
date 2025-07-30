@@ -223,7 +223,7 @@ const Expenses = () => {
                 <td>
                   ₹{" "}
                   {exp.amount >= 1000
-                    ? (exp.amount / 1000).toFixed(1) + "K"
+                    ? exp.amount
                     : exp.amount}
                 </td>
               </tr>
@@ -238,7 +238,7 @@ const Expenses = () => {
               <td style={{ fontWeight: "bold" }}>
                 ₹{" "}
                 {totalAmount >= 1000
-                  ? (totalAmount / 1000).toFixed(1) + "K"
+                  ? totalAmount
                   : totalAmount}
               </td>
             </tr>
