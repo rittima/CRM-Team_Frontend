@@ -1,6 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import "./Sidebar.scss";
+import {
+  LayoutDashboard, Users, FileText, ReceiptText, FolderOpen,
+  Users2, CalendarCheck2, ListTodo, LifeBuoy, Rocket,
+  BookText, Settings, BarChart
+} from "lucide-react";
+import "../Styles/Sidebar.scss";
 
 const Sidebar = () => {
   const { user, employeeData } = useAuth();
@@ -9,21 +14,16 @@ const Sidebar = () => {
     : null;
 
   const linkClasses = ({ isActive }) =>
-    `block px-5 py-3 rounded transition 
-     ${
-       isActive
-         ? "bg-blue-600 text-white"
-         : "hover:bg-blue-100 hover:text-blue-700"
-     }`;
+    isActive ? "nav-link active" : "nav-link";
 
   return (
-    <div className="sticky top-0 left-0 h-full ">
+    <div className="wrapper">
       {user ? (
         <aside className="sidebar">
           <ul>
             <li className="user-info">
               <img
-                src={currentEmployee.image}
+                src={currentEmployee?.image}
                 alt="User"
                 className="user-pic"
               />
@@ -56,11 +56,23 @@ const Sidebar = () => {
                 Manager
               </NavLink>
             </li> */}
+
+            <li><NavLink to="/" className={linkClasses}><LayoutDashboard size={18} /> Dashboard</NavLink></li>
+            <li><NavLink to="/hr" className={linkClasses}><Users size={18} /> HR Records</NavLink></li>
+            <li><NavLink to="/expense" className={linkClasses}><ReceiptText size={18} /> Expense</NavLink></li>
+            <li><NavLink to="/documents" className={linkClasses}><FileText size={18} /> Document</NavLink></li>
+            <li><NavLink to="/projects" className={linkClasses}><FolderOpen size={18} /> Projects</NavLink></li>
+            <li><NavLink to="/staff-workload" className={linkClasses}><Users2 size={18} /> Staff Workload</NavLink></li>
+            <li><NavLink to="/timesheets-leave" className={linkClasses}><CalendarCheck2 size={18} /> Timesheets & Leave</NavLink></li>
+            <li><NavLink to="/tasks" className={linkClasses}><ListTodo size={18} /> Tasks</NavLink></li>
+            <li><NavLink to="/support" className={linkClasses}><LifeBuoy size={18} /> Support</NavLink></li>
+            <li><NavLink to="/leads" className={linkClasses}><Rocket size={18} /> Leads</NavLink></li>
+            <li><NavLink to="/knowledge-base" className={linkClasses}><BookText size={18} /> Knowledge Base</NavLink></li>
+            <li><NavLink to="/utilities" className={linkClasses}><Settings size={18} /> Utilities</NavLink></li>
+            <li><NavLink to="/reports" className={linkClasses}><BarChart size={18} /> Reports</NavLink></li>
           </ul>
         </aside>
-      ) : (
-        <div></div>
-      )}
+      ) : null}
     </div>
   );
 };

@@ -10,7 +10,9 @@ import NotFound from './pages/NotFound';
 import Projects from './pages/Projects';
 import Documents from './pages/Documents';
 import Report from './pages/Report';
-import Manager from './pages/Manager';
+// import Manager from './pages/Manager';
+import TaskPage from './pages/TaskPage';
+import HrRecord from './pages/HrRecord';
 
 function App() {
   return (
@@ -19,7 +21,7 @@ function App() {
         This CRM application is not available on mobile devices.
       </div>
 
-      <div id="desktop-app" className="flex min-h-screen hidden md:flex">
+      <div id="desktop-app" className="hidden md:flex min-h-screen">
         <Sidebar />
 
         <div className="flex-1 flex flex-col">
@@ -34,6 +36,9 @@ function App() {
               <Route path="/login" element={<Login />} />
               {/* <Route path="/manager" element={<Manager />} /> */}
               <Route path="*" element={<NotFound />} />
+              <Route path="/tasks" element={<TaskPage />} />
+              <Route path='/hr' element={<HrRecord />} />
+
             </Routes>
           </main>
         </div>

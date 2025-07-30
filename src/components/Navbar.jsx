@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
 import Modal from "../components/Modal.jsx";
 import Attendance from "../pages/Attendance.jsx";
 import TimerModal from "../components/TimerModal";
-import { UserCheck, Timer, LogOut } from "lucide-react"; 
+import { UserCheck, Timer, LogOut, Search } from "lucide-react";
 import "../Styles/Navbar.scss";
 
 const Navbar = () => {
@@ -13,11 +13,23 @@ const Navbar = () => {
 
   const [showAttendanceModal, setShowAttendanceModal] = useState(false);
   const [showTimerModal, setShowTimerModal] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchTerm, setSearchTerm] = useState(searchParams.get("q") || "");
+
+  const handleSearch = () => {
+    if (searchTerm.trim()) {
+      setSearchParams({ q: searchTerm });
+      navigate(`/?q=${searchTerm}`);
+    }
+  };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <h1 className="navbar-title">Welcome to CRM Team</h1>
+        {/* Search Bar */}
+          <div className="text-lg font-semibold text-gray-800">
+          Welcome to XYZ Pvt Ltd
+        </div>
 
         {user ? (
           <div className="navbar-buttons">
@@ -37,10 +49,7 @@ const Navbar = () => {
               Timer
             </button>
 
-            <button
-              onClick={logout}
-              className="navbar-btn logout-btn"
-            >
+            <button onClick={logout} className="navbar-btn logout-btn">
               <LogOut className="icon" />
               Logout
             </button>
@@ -51,15 +60,22 @@ const Navbar = () => {
       </div>
 
       {/* Attendance Modal */}
-      <Modal show={showAttendanceModal} onClose={() => setShowAttendanceModal(false)}>
+      <Modal
+        show={showAttendanceModal}
+        onClose={() => setShowAttendanceModal(false)}
+      >
         <Attendance />
       </Modal>
 
       {/* Timer Modal */}
-      <TimerModal isOpen={showTimerModal} onClose={() => setShowTimerModal(false)} />
+      <TimerModal
+        isOpen={showTimerModal}
+        onClose={() => setShowTimerModal(false)}
+      />
     </nav>
   );
 };
 
 export default Navbar;
+
 
