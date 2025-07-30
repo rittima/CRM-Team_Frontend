@@ -31,31 +31,6 @@ const Sidebar = () => {
                 Hi, {currentEmployee?.name || "User"}
               </span>
             </li>
-            <li>
-              <NavLink to="/" className="nav-link">
-                Dashboard
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/projects" className="nav-link">
-                Projects
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/documents" className="nav-link">
-                Documents
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/reports" className="nav-link">
-                Reports
-              </NavLink>
-            </li>
-            {/* <li>
-              <NavLink to="/manager" className="nav-link">
-                Manager
-              </NavLink>
-            </li> */}
 
             <li><NavLink to="/" className={linkClasses}><LayoutDashboard size={18} /> Dashboard</NavLink></li>
             <li><NavLink to="/hr" className={linkClasses}><Users size={18} /> HR Records</NavLink></li>
