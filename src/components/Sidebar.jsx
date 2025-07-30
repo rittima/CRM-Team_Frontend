@@ -34,11 +34,11 @@ const Sidebar = () => {
 
             <li><NavLink to="/" className={linkClasses}><LayoutDashboard size={18} /> Dashboard</NavLink></li>
             <li><NavLink to="/hr" className={linkClasses}><Users size={18} /> HR Records</NavLink></li>
-            <li><NavLink to="/expense" className={linkClasses}><ReceiptText size={18} /> Expense</NavLink></li>
+            <li><NavLink to="/expenses" className={linkClasses}><ReceiptText size={18} /> Expense</NavLink></li>
             <li><NavLink to="/documents" className={linkClasses}><FileText size={18} /> Document</NavLink></li>
             <li><NavLink to="/projects" className={linkClasses}><FolderOpen size={18} /> Projects</NavLink></li>
-            <li><NavLink to="/staff-workload" className={linkClasses}><Users2 size={18} /> Staff Workload</NavLink></li>
-            <li><NavLink to="/timesheets-leave" className={linkClasses}><CalendarCheck2 size={18} /> Timesheets & Leave</NavLink></li>
+            <li><NavLink to="/workload" className={linkClasses}><Users2 size={18} /> Staff Workload</NavLink></li>
+            <li><NavLink to="/timesheet" className={linkClasses}><CalendarCheck2 size={18} /> Timesheets & Leave</NavLink></li>
             <li><NavLink to="/tasks" className={linkClasses}><ListTodo size={18} /> Tasks</NavLink></li>
             <li><NavLink to="/support" className={linkClasses}><LifeBuoy size={18} /> Support</NavLink></li>
             <li><NavLink to="/leads" className={linkClasses}><Rocket size={18} /> Leads</NavLink></li>

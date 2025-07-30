@@ -10,9 +10,12 @@ import NotFound from './pages/NotFound';
 import Projects from './pages/Projects';
 import Documents from './pages/Documents';
 import Report from './pages/Report';
-// import Manager from './pages/Manager';
 import TaskPage from './pages/TaskPage';
 import HrRecord from './pages/HrRecord';
+import TimesheetsAndLeaves from './pages/TimesheetsAndLeaves';
+import StaffWorkload from './pages/StaffWorkload';
+import Expenses from './pages/Expenses';
+import Support from './pages/Support';
 
 function App() {
   return (
@@ -34,10 +37,13 @@ function App() {
               <Route path="/documents" element={<ProtectedRoute><Documents /></ProtectedRoute>} />
               <Route path="/reports" element={<ProtectedRoute><Report /></ProtectedRoute>} />
               <Route path="/login" element={<Login />} />
-              {/* <Route path="/manager" element={<Manager />} /> */}
               <Route path="*" element={<NotFound />} />
               <Route path="/tasks" element={<TaskPage />} />
               <Route path='/hr' element={<HrRecord />} />
+              <Route path='/timesheet' element={<TimesheetsAndLeaves />} />
+              <Route path='/workload' element={<StaffWorkload />} />
+              <Route path='/expenses' element={<Expenses />} />
+              <Route path='/support' element={<Support />} />
 
             </Routes>
           </main>
