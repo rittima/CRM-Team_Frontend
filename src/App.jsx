@@ -32,7 +32,7 @@ function App() {
               <Route path="/documents" element={<ProtectedRoute><Documents /></ProtectedRoute>} />
               <Route path="/reports" element={<ProtectedRoute><Report /></ProtectedRoute>} />
               <Route path="/login" element={<Login />} />
-              <Route path="/manager" element={<Manager />} />
+              {/* <Route path="/manager" element={<Manager />} /> */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
