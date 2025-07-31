@@ -17,7 +17,7 @@ const Sidebar = () => {
     isActive ? "nav-link active" : "nav-link";
 
   return (
-    <div className="top-0 left-0 sticky h-screen">
+    <div className="top-0 left-0 sticky h-screen">  {/* wapper class delete rakna for the css*/}
       {user ? (
         <aside className="sidebar">
           <ul>
