@@ -10,6 +10,7 @@ const employees = [
     phone: "+91-9876543210",
     designation: "Frontend Developer",
     department: "Engineering",
+    projectId:"PRJ001",
     project: "CRM Redesign",
     status: "Active",
     joiningDate: "2022-04-15"
@@ -22,7 +23,8 @@ const employees = [
     phone: "+91-9876501234",
     designation: "Backend Developer",
     department: "Engineering",
-    project: "API Integration",
+    projectId:"PRJ005",
+    project: "Recruitment System",
     status: "Active",
     joiningDate: "2021-12-01"
   }

@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className="navbar ">
       <div className="navbar-container">
         {/* Search Bar */}
           <div className="text-lg font-semibold text-gray-800">
