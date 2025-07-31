@@ -1,5 +1,6 @@
 import p1 from "./assets/p3.jpg"
 import p2 from "./assets/p2.jpg"
+import { IndianRupee, Receipt, TrendingUp } from "lucide-react";
 
 const employees = [
   {
@@ -100,35 +101,54 @@ export const faqs = [
   }
 ];
 
-export const leaveRequests = [
+export const salaryBreakdown = {
+    netSalary: 4200,
+    baseSalary: 3000,
+    allowances: 800,
+    deductions: 600,
+    bonus: 200,
+  };
+
+export const payslips = [
+    { month: 'July 2024', date: '2024-07-30', amount: 4200 },
+    { month: 'June 2024', date: '2024-06-30', amount: 4200 },
+    { month: 'May 2024', date: '2024-05-30', amount: 4000 },
+  ];
+export const salary = [
   {
-    id: 1,
-    type: "Annual Leave",
-    startDate: "Feb 15, 2024",
-    endDate: "Feb 19, 2024",
-    days: 5,
-    reason: "Family vacation",
-    status: "Pending",
-    appliedDate: "Feb 1, 2024"
+    label: "Net Salary",
+    value: salaryBreakdown.netSalary,
+    color: "green",
+    icon: <IndianRupee className="h-5 w-5 text-green-600" />,
   },
   {
-    id: 2,
-    type: "Sick Leave",
-    startDate: "Jan 20, 2024",
-    endDate: "Jan 22, 2024",
-    days: 3,
-    reason: "Medical appointment",
-    status: "Approved",
-    appliedDate: "Jan 18, 2024"
+    label: "Base Salary",
+    value: salaryBreakdown.baseSalary,
+    color: "indigo",
+    icon: <TrendingUp className="h-5 w-5 text-indigo-600" />,
   },
   {
-    id: 3,
-    type: "Personal Leave",
-    startDate: "Jan 10, 2024",
-    endDate: "Jan 10, 2024",
-    days: 1,
-    reason: "Personal matter",
-    status: "Approved",
-    appliedDate: "Jan 5, 2024"
-  }
+    label: "Allowances",
+    value: salaryBreakdown.allowances,
+    color: "blue",
+    icon: <TrendingUp className="h-5 w-5 text-blue-600" />,
+  },
+  {
+    label: "Deductions",
+    value: salaryBreakdown.deductions,
+    color: "red",
+    icon: <Receipt className="h-5 w-5 text-red-600" />,
+  },
+]
+
+export const monthBreadown=
+[
+  { label: 'Base Salary', amount: salaryBreakdown.baseSalary, type: 'positive' },
+  { label: 'Housing Allowance', amount: 400, type: 'positive' },
+  { label: 'Transport Allowance', amount: 200, type: 'positive' },
+  { label: 'Medical Allowance', amount: 200, type: 'positive' },
+  { label: 'Performance Bonus', amount: salaryBreakdown.bonus, type: 'positive' },
+  { label: 'Income Tax', amount: -800, type: 'negative' },
+  { label: 'Social Security', amount: -200, type: 'negative' },
+  { label: 'Health Insurance', amount: -200, type: 'negative' },
 ]

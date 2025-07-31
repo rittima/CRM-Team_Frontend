@@ -15,7 +15,7 @@ import TimesheetsAndLeaves from './pages/TimesheetsAndLeaves';
 import StaffWorkload from './pages/StaffWorkload';
 import Expenses from './pages/Expenses';
 import Support from './pages/Support';
-// import Utilities from './pages/Utilities';
+import PaySlips from './pages/PaySlips';
 
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
               <Route path='/workload' element={<ProtectedRoute><StaffWorkload/> </ProtectedRoute>} />
               <Route path='/expenses' element={<ProtectedRoute><Expenses/> </ProtectedRoute>} />
               <Route path='/support' element={<ProtectedRoute><Support/> </ProtectedRoute>} />
-              {/* <Route path='/utilities' element={<ProtectedRoute><Utilities/> </ProtectedRoute>} /> */}
+              <Route path='/payslip' element={<ProtectedRoute><PaySlips/> </ProtectedRoute>} />
             </Routes>
           </main>
         </div>
