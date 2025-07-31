@@ -28,7 +28,7 @@ const PaySlips = () => {
         {salary.map((item, idx) => (
           <div
             key={idx}
-            className={`p-4  border border-${item.color}-200 hover:shadow-lg transition`}
+            className={`p-4 bg-gray-100 hover:shadow-lg transition`}
           >
             <div className="flex items-center gap-4">
               <div className={`p-2 rounded-full bg-${item.color}-100`}>
@@ -46,7 +46,7 @@ const PaySlips = () => {
       </div>
 
       {/* Payslips History */}
-      <div className="bg-white border rounded-lg shadow-sm p-6 space-y-4">
+      <div className="bg-gray-100 rounded-lg shadow-sm p-6 space-y-4">
         <h2 className="text-lg font-semibold flex items-center gap-2 text-gray-800">
           <Calendar className="h-5 w-5" />
           Payslips History
@@ -54,7 +54,9 @@ const PaySlips = () => {
         {payslips.map((p, idx) => (
           <div
             key={idx}
-            className="flex justify-between items-center border rounded-md p-4 hover:border-blue-500 transition"
+            // className="flex justify-between items-center border-white rounded-md p-4 hover:border-blue-100  transition"
+            className="flex justify-between items-center border border-gray-300 rounded-md p-4 hover:border-blue-300 hover:shadow-sm transition duration-200"
+
           >
             <div className="flex items-center gap-3">
               <div className="p-2 bg-blue-100 rounded-md">
@@ -79,7 +81,7 @@ const PaySlips = () => {
       </div>
 
       {/* Monthly Breakdown */}
-      <div className="bg-white  pl-7 border rounded-lg shadow-sm p-6 space-y-4">
+      <div className="bg-gray-100 rounded-lg shadow-sm p-6 space-y-4">
         <h2 className="text-lg font-semibold flex items-center gap-2 text-gray-800">
           <ReceiptIndianRupee className="h-5 w-5" />
           Current Month Breakdown
