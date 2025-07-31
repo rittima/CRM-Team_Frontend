@@ -99,3 +99,36 @@ export const faqs = [
     answer: 'After submitting, you’ll receive a ticket ID. You can track it under the "My Tickets" section.'
   }
 ];
+
+export const leaveRequests = [
+  {
+    id: 1,
+    type: "Annual Leave",
+    startDate: "Feb 15, 2024",
+    endDate: "Feb 19, 2024",
+    days: 5,
+    reason: "Family vacation",
+    status: "Pending",
+    appliedDate: "Feb 1, 2024"
+  },
+  {
+    id: 2,
+    type: "Sick Leave",
+    startDate: "Jan 20, 2024",
+    endDate: "Jan 22, 2024",
+    days: 3,
+    reason: "Medical appointment",
+    status: "Approved",
+    appliedDate: "Jan 18, 2024"
+  },
+  {
+    id: 3,
+    type: "Personal Leave",
+    startDate: "Jan 10, 2024",
+    endDate: "Jan 10, 2024",
+    days: 1,
+    reason: "Personal matter",
+    status: "Approved",
+    appliedDate: "Jan 5, 2024"
+  }
+]

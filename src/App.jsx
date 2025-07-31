@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -12,7 +11,12 @@ import Documents from './pages/Documents';
 import Report from './pages/Report';
 import TaskPage from './pages/TaskPage';
 import HrRecord from './pages/HrRecord';
-import TimeSheet from './pages/TimeSheet';
+import TimesheetsAndLeaves from './pages/TimesheetsAndLeaves';
+import StaffWorkload from './pages/StaffWorkload';
+import Expenses from './pages/Expenses';
+import Support from './pages/Support';
+// import Utilities from './pages/Utilities';
+
 
 function App() {
   return (
@@ -34,11 +38,14 @@ function App() {
               <Route path="/documents" element={<ProtectedRoute><Documents /></ProtectedRoute>} />
               <Route path="/reports" element={<ProtectedRoute><Report /></ProtectedRoute>} />
               <Route path="/login" element={<Login />} />
-              <Route path="/timesheets-leave" element={<TimeSheet />} />
               <Route path="*" element={<NotFound />} />
-              <Route path="/tasks" element={<TaskPage />} />
-              <Route path='/hr' element={<HrRecord />} />
-
+              <Route path="/tasks" element={<ProtectedRoute><TaskPage/> </ProtectedRoute>} />
+              <Route path='/hr' element={<ProtectedRoute><HrRecord/> </ProtectedRoute>} />
+              <Route path='/timesheet' element={<ProtectedRoute><TimesheetsAndLeaves/> </ProtectedRoute>} />
+              <Route path='/workload' element={<ProtectedRoute><StaffWorkload/> </ProtectedRoute>} />
+              <Route path='/expenses' element={<ProtectedRoute><Expenses/> </ProtectedRoute>} />
+              <Route path='/support' element={<ProtectedRoute><Support/> </ProtectedRoute>} />
+              {/* <Route path='/utilities' element={<ProtectedRoute><Utilities/> </ProtectedRoute>} /> */}
             </Routes>
           </main>
         </div>

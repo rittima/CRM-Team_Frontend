@@ -1,23 +1,30 @@
-import React from 'react'
+import { useAuth } from "../context/AuthContext";
 
-const LeaveCard = () => {
-  return (
-    <div>
-      <div className="grid grid-cols-3 gap-6 p-6">
-        <div className="bg-gray-900 text-white shadow-md hover:shadow-lg transition-shadow duration-300 p-6">
-          <h4 className="text-l font-boldtext-white uppercase mb-4">Total Number of Leave Taken</h4>
-          <h1 className="text-3xl font-boldtext-white uppercase mb-4">7</h1>
+const LeaveCard = ({ taken, pending, left }) => {
+  const { user, employeeData } = useAuth();
+    const currentEmployee = user
+      ? employeeData.find(emp => emp.id === user.token)
+      : null;
+    return (
+      <div className="p-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-gray-900 text-white shadow-md hover:shadow-lg transition-shadow duration-300 p-6 rounded-lg">
+            <h4 className="text-lg font-bold uppercase mb-4">Total Days Leave</h4>
+            <h1 className="text-3xl font-bold text-blue-100">{taken}</h1>
+          </div>
+
+          <div className="bg-gray-900 text-white shadow-md hover:shadow-lg transition-shadow duration-300 p-6 rounded-lg">
+            <h4 className="text-lg font-bold uppercase mb-4">Leave Pending</h4>
+            <h1 className="text-3xl font-bold text-yellow-500">{pending}</h1>
+          </div>
+
+          <div className="bg-gray-900 text-white shadow-md hover:shadow-lg transition-shadow duration-300 p-6 rounded-lg">
+            <h4 className="text-lg font-bold uppercase mb-4">Monthly Leave Remaining</h4>
+            <h1 className="text-3xl font-bold text-green-400">{left}</h1>
+          </div>
         </div>
-        <div className="bg-gray-900 text-white shadow-md hover:shadow-lg transition-shadow duration-300 p-6">
-          <h4 className="text-l font-boldtext-white uppercase mb-4">Total Number of Leave Pending</h4>
-          <h1 className="text-3xl font-boldtext-white uppercase mb-4">2</h1>
-        </div>
-        <div className="bg-gray-900 text-white shadow-md hover:shadow-lg transition-shadow duration-300 p-6">
-          <h4 className="text-l font-boldtext-white uppercase mb-4">Total Number of Leave Left for the week</h4>
-          <h1 className="text-3xl font-boldtext-white uppercase mb-4">1</h1>
-        </div>
-    </div>
-    </div>
+      </div>
+
   )
 }
 
