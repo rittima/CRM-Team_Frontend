@@ -13,7 +13,7 @@ const PaySlips = () => {
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <h1 className="text-gray-500 text-1xl font-bold mb-4 uppercase">Payslips & Salary</h1>
         <select
-          className="w-36 px-3 py-2 border rounded-md text-sm bg-white shadow-sm"
+          className="w-36 px-3 py-2 text-sm bg-white shadow-sm border border-gray-100 cursor-pointer"
           value={selectedYear}
           onChange={(e) => setSelectedYear(e.target.value)}
         >
@@ -54,7 +54,6 @@ const PaySlips = () => {
         {payslips.map((p, idx) => (
           <div
             key={idx}
-            // className="flex justify-between items-center border-white rounded-md p-4 hover:border-blue-100  transition"
             className="flex justify-between items-center border border-gray-300 rounded-md p-4 hover:border-blue-300 hover:shadow-sm transition duration-200"
 
           >
@@ -70,10 +69,10 @@ const PaySlips = () => {
             <div className="flex items-center gap-3">
               <span className="font-semibold text-gray-700"><FontAwesomeIcon icon={faIndianRupee} />{p.amount}</span>
               <button className="text-sm px-3 py-1  hover:bg-blue-50 flex items-center gap-1">
-                <Eye className="h-4 w-4" /> 
+                <Eye className="h-4 w-4 hover:h-6 hover:w-6 transition-all duration-300 cursor-pointer" /> 
               </button>
               <button className="text-sm px-3 py-1 hover:bg-blue-50 flex items-center gap-1">
-                <Download className="h-4 w-4" /> 
+                <Download className="h-4 w-4 hover:h-6 hover:w-6 transition-all duration-300 cursor-pointer" /> 
               </button>
             </div>
           </div>
