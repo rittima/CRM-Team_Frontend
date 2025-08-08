@@ -22,8 +22,8 @@ import Page from './attendence/page';
 function App() {
   return (
     <>
-      <div id="mobile-block" className='block md:hidden text-center text-red-600 text-xl p-6'>
-        This CRM application is not available on mobile devices.
+      <div id="mobile-block" className='block lg:hidden text-center text-red-600 text-xl p-6'>
+        This CRM application is not available on mobile or tab  devices.
       </div>
 
       <div id="desktop-app" className="hidden md:flex min-h-screen">
