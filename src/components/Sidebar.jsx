@@ -4,7 +4,8 @@ import {
   LayoutDashboard, Users, FileText, ReceiptText, FolderOpen,
   Users2, CalendarCheck2, ListTodo, LifeBuoy, Rocket,
   BookText, Settings, BarChart,
-  IndianRupeeIcon} from "lucide-react";
+  IndianRupeeIcon,
+  Calendar} from "lucide-react";
 import "../Styles/Sidebar.scss";
 
 const Sidebar = () => {
@@ -17,7 +18,7 @@ const Sidebar = () => {
     isActive ? "nav-link active" : "nav-link";
 
   return (
-    <div className="top-0 left-0 sticky h-screen">  {/* wapper class delete rakna for the css*/}
+    <div >
       {user ? (
         <aside className="sidebar">
           <ul>
@@ -37,6 +38,7 @@ const Sidebar = () => {
             <li><NavLink to="/expenses" className={linkClasses}><ReceiptText size={18} /> Expense</NavLink></li>
             <li><NavLink to="/documents" className={linkClasses}><FileText size={18} /> Document</NavLink></li>
             <li><NavLink to="/projects" className={linkClasses}><FolderOpen size={18} /> Projects</NavLink></li>
+            <li><NavLink to="/attendence" className={linkClasses}><Calendar size={18} /> Attendence</NavLink></li>
             <li><NavLink to="/workload" className={linkClasses}><Users2 size={18} /> Staff Workload</NavLink></li>
             <li><NavLink to="/payslip" className={linkClasses}><IndianRupeeIcon size={18} /> Payslips & Salary</NavLink></li>
             <li><NavLink to="/timesheet" className={linkClasses}><CalendarCheck2 size={18} /> Timesheets & Leave</NavLink></li>

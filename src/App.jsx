@@ -16,6 +16,7 @@ import StaffWorkload from './pages/StaffWorkload';
 import Expenses from './pages/Expenses';
 import Support from './pages/Support';
 import PaySlips from './pages/PaySlips';
+import Page from './attendence/page';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
               <Route path='/expenses' element={<ProtectedRoute><Expenses/> </ProtectedRoute>} />
               <Route path='/support' element={<ProtectedRoute><Support/> </ProtectedRoute>} />
               <Route path='/payslip' element={<ProtectedRoute><PaySlips/> </ProtectedRoute>} />
+              <Route path='/attendence' element={<ProtectedRoute><Page/> </ProtectedRoute>} />
             </Routes>
           </main>
         </div>

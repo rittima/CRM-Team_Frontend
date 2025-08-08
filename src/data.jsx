@@ -1,6 +1,14 @@
-import p1 from "./assets/p3.jpg"
-import p2 from "./assets/p2.jpg"
+
 import { IndianRupee, Receipt, TrendingUp } from "lucide-react";
+
+import p1 from "./assets/p1.jpg";
+import p2 from "./assets/p2.jpg";
+import p3 from "./assets/p3.jpg";
+import p4 from "./assets/p4.jpg";
+import p5 from "./assets/p5.jpg";
+import p6 from "./assets/p6.jpg";
+import p7 from "./assets/p7.jpg";
+import p8 from "./assets/p8.jpg";
 
 const employees = [
   {
@@ -11,10 +19,10 @@ const employees = [
     phone: "+91-9876543210",
     designation: "Frontend Developer",
     department: "Engineering",
-    projectId:"PRJ001",
+    projectId: "PRJ001",
     project: "CRM Redesign",
     status: "Active",
-    joiningDate: "2022-04-15"
+    joiningDate: "2022-04-15",
   },
   {
     id: "EMP002",
@@ -24,12 +32,91 @@ const employees = [
     phone: "+91-9876501234",
     designation: "Backend Developer",
     department: "Engineering",
-    projectId:"PRJ005",
+    projectId: "PRJ005",
     project: "Recruitment System",
     status: "Active",
-    joiningDate: "2021-12-01"
-  }
+    joiningDate: "2021-12-01",
+  },
+  {
+    id: "EMP003",
+    name: "Soham Roy",
+    image: p3,
+    email: "soham.roy@gmail.com",
+    phone: "+91-9876532198",
+    designation: "UI/UX Designer",
+    department: "Design",
+    projectId: "PRJ001",
+    project: "CRM Redesign",
+    status: "Active",
+    joiningDate: "2023-01-10",
+  },
+  {
+    id: "EMP004",
+    name: "Nikita Sharma",
+    image: p4,
+    email: "nikita.sharma@gmail.com",
+    phone: "+91-9867543210",
+    designation: "QA Engineer",
+    department: "Quality Assurance",
+    projectId: "PRJ007",
+    project: "E-Commerce Platform",
+    status: "Active",
+    joiningDate: "2022-07-22",
+  },
+  {
+    id: "EMP005",
+    name: "Arjun Verma",
+    image: p5,
+    email: "arjun.verma@gmail.com",
+    phone: "+91-9845671234",
+    designation: "DevOps Engineer",
+    department: "Infrastructure",
+    projectId: "PRJ003",
+    project: "Payment Gateway",
+    status: "Inactive",
+    joiningDate: "2020-09-01",
+  },
+  {
+    id: "EMP006",
+    name: "Priya Desai",
+    image: p6,
+    email: "priya.desai@gmail.com",
+    phone: "+91-9898989898",
+    designation: "Product Manager",
+    department: "Product",
+    projectId: "PRJ009",
+    project: "Learning Portal",
+    status: "Active",
+    joiningDate: "2021-05-15",
+  },
+  {
+    id: "EMP007",
+    name: "Manav Singh",
+    image: p7,
+    email: "manav.singh@gmail.com",
+    phone: "+91-9876123456",
+    designation: "Mobile Developer",
+    department: "Engineering",
+    projectId: "PRJ004",
+    project: "Delivery App",
+    status: "On Leave",
+    joiningDate: "2022-10-20",
+  },
+  {
+    id: "EMP008",
+    name: "Kavya Iyer",
+    image: p8,
+    email: "kavya.iyer@gmail.com",
+    phone: "+91-9765432109",
+    designation: "HR Executive",
+    department: "Human Resources",
+    projectId: "PRJ010",
+    project: "Onboarding System",
+    status: "Active",
+    joiningDate: "2023-02-01",
+  },
 ];
+
 export default employees;
 
 
@@ -152,3 +239,53 @@ export const monthBreadown=
   { label: 'Social Security', amount: -200, type: 'negative' },
   { label: 'Health Insurance', amount: -200, type: 'negative' },
 ]
+
+
+export const attendance = [
+  {
+    employeeId: "EMP001",
+    records: [
+      {
+        date: "2025-08-08",
+        present: true,
+        checkIn: "09:30 AM",
+        checkOut: "06:10 PM"
+      },
+      {
+        date: "2025-08-07",
+        present: true,
+        checkIn: "09:30 AM",
+        checkOut: "06:10 PM"
+      },
+      {
+        date: "2025-08-06",
+        present: false,
+        checkIn: "",
+        checkOut: ""
+      }
+    ]
+  },
+  {
+    employeeId: "EMP002",
+    records: [
+      {
+        date: "2025-08-08",
+        present: true,
+        checkIn: "09:30 AM",
+        checkOut: "06:10 PM"
+      },
+      {
+        date: "2025-08-07",
+        present: false,
+        checkIn: "",
+        checkOut: ""
+      },
+      {
+        date: "2025-08-06",
+        present: true,
+        checkIn: "09:30 AM",
+        checkOut: "06:10 PM"
+      }
+    ]
+  }
+];
