@@ -94,14 +94,15 @@ const AttendanceTable = () => {
         </button>
       </div>
 
-      {/* Attendance Table */}
+      {/* Attendance Table
+      <div className='overflow-auto max-w-[150vh] max-h-[65vh]  '>
       {days > 0 && (
         <div className="overflow-auto">
-          <table className="min-w-full border text-sm">
+          <table className="min-w-full  text-sm">
             <thead className="bg-gray-100">
               <tr>
-                <th className="p-2 border text-left">EMP ID</th>
-                <th className="p-2 border text-left">EMP Name</th>
+                <th className="p-2 text-left">EMP ID</th>
+                <th className="p-2 text-left">EMP Name</th>
                 {[...Array(days)].map((_, i) => (
                   <th key={i} className="p-2 border text-center">{i + 1}</th>
                 ))}
@@ -115,8 +116,8 @@ const AttendanceTable = () => {
                     key={emp.id}
                     className={rowIndex % 2 === 0 ? "bg-blue-50" : ""}
                   >
-                    <td className="p-2 border">{emp.id}</td>
-                    <td className="p-2 border">{emp.name}</td>
+                    <td className="p-2 ">{emp.id}</td>
+                    <td className="p-2 ">{emp.name}</td>
                     {emp.attendance.map((checked, dayIndex) => (
                       <td key={dayIndex} className="p-2 border text-center">
                         <input
@@ -133,6 +134,53 @@ const AttendanceTable = () => {
           </table>
         </div>
       )}
+      </div> */}
+
+      {/* Attendance Table */}
+    {days > 0 && (
+      <div className="overflow-auto max-w-screen max-h-[65vh] shadow-sm mt-6">
+        <table className="min-w-full text-sm text-left border-collapse">
+          <thead className="bg-blue-600 text-white sticky top-0 z-10">
+            <tr>
+              <th className="p-3 border-r">EMP ID</th>
+              <th className="p-3 border-r">EMP Name</th>
+              {[...Array(days)].map((_, i) => (
+                <th key={i} className="p-3 border-r text-center">{i + 1}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {attendance
+              .filter((emp) => !department || emp.department === department)
+              .map((emp, rowIndex) => (
+                <tr
+                  key={emp.id}
+                  className={`border-t ${
+                    rowIndex % 2 === 0 ? "bg-white" : "bg-gray-50"
+                  }`}
+                >
+                  <td className="p-3 border-r font-medium text-gray-800">{emp.id}</td>
+                  <td className="p-3 border-r font-medium text-gray-800">{emp.name}</td>
+                  {emp.attendance.map((checked, dayIndex) => (
+                    <td
+                      key={dayIndex}
+                      className="p-2 border-r text-center align-middle"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={checked}
+                        onChange={() => toggleCheckbox(emp.id, dayIndex)}
+                        className="w-4 h-4 accent-blue-600 cursor-pointer"
+                      />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+
     </div>
   );
 };
